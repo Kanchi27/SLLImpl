@@ -14,6 +14,7 @@ class SinglyLinkedList {
     this.length = 0;
   }
 
+//   O(1)
   push(val){
     let newNode = new Node(val);
     if(!this.head){
@@ -27,17 +28,7 @@ class SinglyLinkedList {
     return this
   }
 
-  print(){ 
-    let current = this.head;
-    let arr = [];
-    while(current){
-      arr.push(current.val);
-      current = current.next;
-    }
-    return arr
-  }
-
-  // O(n)
+   // O(n)
   pop(){
    if(!this.head) return;
    if(this.head===this.tail){
@@ -57,9 +48,20 @@ class SinglyLinkedList {
    
   }
 
-  // O(1)
-  // delete first element of the array
-  shift(){
+  //   O(n)
+  print(){ 
+    let current = this.head;
+    let arr = [];
+    while(current){
+      arr.push(current.val);
+      current = current.next;
+    }
+    return arr
+  }
+
+ 
+  // O(1) 
+  shift(){ // delete first element of the array
    if(!this.head) return undefined;
    let head = this.head;
     if(this.length==1){
@@ -71,6 +73,7 @@ class SinglyLinkedList {
     return head;
   }
 
+//   O(1)
   unshift(val){
   let newHead = new Node(val);
   if(!this.head){
@@ -96,6 +99,7 @@ class SinglyLinkedList {
     return current;
   }     
 
+  
   setItem(index,value){
     let node = this.getItem(index);
     if(node){
